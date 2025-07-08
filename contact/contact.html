@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="contact-style.css">
+</head>
+<body>
+   <header>
+    <h1>ShopNow</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="contact-wrapper">
+    <h2 class="contact-title">Get in Touch</h2>
+    <form class="contact-form" id="contactForm">
+      <div class="form-group">
+        <input type="text" id="name" required>
+        <label for="name">Your Name</label>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" required>
+        <label for="email">Your Email</label>
+      </div>
+      <div class="form-group">
+        <textarea id="message" rows="5" required></textarea>
+        <label for="message">Your Message</label>
+      </div>
+      <button type="submit" class="send-button">Send Message</button>
+    </form>
+    <div id="successMessage" class="success-message">Message sent successfully!</div>
+  </div>
+
+  <script src="contact-script.js"></script>
+</body>
+</html>

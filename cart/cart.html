@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Cart - ShopNow</title>
+  <link rel="stylesheet" href="cart-style.css" />
+</head>
+<body>
+  <header>
+    <h1>ShopNow</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="cart-wrapper">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+  </div>
+  <div id="cart-items"></div>
+  <script src="cart.js"></script>
+  <script>
+    const cartItemsContainer = document.getElementById("cart-items");
+    const cart = getCart();
+    document.getElementById("cart-count").innerText = getCartTotalCount();
+
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+      cart.forEach(item => {
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "cart-item";
+        itemDiv.innerHTML = `
+          <h4>${item.name}</h4>
+          <p>Price: ₹${item.price}</p>
+          <p>Quantity: ${item.quantity}</p>
+          <p>Total: ₹${item.price * item.quantity}</p>
+        `;
+        cartItemsContainer.appendChild(itemDiv);
+      });
+    }
+  </script>
+</body>
+</html>
